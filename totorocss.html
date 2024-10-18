@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Llamarada</title>
+    <link rel="stylesheet" href="totoro.css">
+    <style>
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .item {
+            text-align: center;
+            margin-bottom: 10px; /* Se reduce el margen inferior */
+            width: 180px; /* Ancho fijo para cada item */
+        }
+
+        .item img {
+            width: 100%; /* Las imágenes ocupan el 100% del ancho del contenedor */
+            height: 180px; /* Altura fija para todas las imágenes */
+            object-fit: cover; /* Mantiene la proporción sin distorsionarse */
+            border-radius: 8px; /* Opcional: agrega bordes redondeados a las imágenes */
+        }
+
+        button {
+            display: block; /* Hace que el botón ocupe el 100% del ancho del contenedor */
+            margin: 5px auto; /* Reduce el margen para que el botón esté más cerca de la imagen */
+            padding: 10px; /* Aumenta el área clickeable del botón */
+            background-color: #ffcc00; /* Color de fondo del botón */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados para el botón */
+            font-size: 16px; /* Aumenta el tamaño de la fuente */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        }
+
+        button:hover {
+            background-color: #e6b800; /* Cambia el color del botón al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="llama 2 xd.png" alt="Logo de La Llamarada" width="240" height="180"> 
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#menu" ondblclick="toggleMenu()">Menú</a>
+                    <ul class="dropdown">
+                        <li><a href="#bebidas">Bebidas</a></li>
+                        <li><a href="#comida">Tacos</a></li>
+                        <li><a href="#tacos">Complementos</a></li>
+                        <li><a href="#chilaquiles">Chilaquiles</a></li>
+                    </ul>
+                </li>
+                <li><a href="#conocenos">Conócenos</a></li>
+                <li><a href="#clientes">Clientes</a></li>
+                <li><a href="#carrito">Carrito</a></li>
+                <li><a href="#perfil">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Secciones del menú y contenido -->
+    <section id="menu" class="tab-content">
+        <h2>Menú</h2>
+        <p>Selecciona una categoría para ver los productos.</p>
+    </section>
+
+    <!-- Sección Bebidas -->
+    <section id="bebidas" class="tab-content">
+        <h2>Bebidas</h2>
+        <div class="image-container">
+            <div class="item">
+                <img src="aguas.jpg" alt="Bebida 1"> 
+                AGUAS
+                <button onclick="addToCart('Bebida 1')">Guardar</button>
+            </div>
+            <div class="item">
+                <img src="cocas.jpg" alt="Bebida 2"> 
+                REFRESCOS
+                <button onclick="addToCart('Bebida 2')">Guardar</button>
+            </div>
+            <div class="item">
+                <img src="cocas.jpg" alt="Bebida 3"> 
+                JUGOS
+                <button onclick="addToCart('Bebida 3')">Guardar</button>
+            </div>
+        </div>
+        <p>Precios: $25.00 - $30.00</p>
+    </section>
+
+    <!-- Sección Comida -->
+    <section id="comida" class="tab-content">
+        <h2>TACOS</h2>
+        <div class="image-container">
+            <div class="item">
+                <img src="pastor.jpg" alt="Comida 1"> 
+                PASTOR
+                <button onclick="addToCart('Comida 1')">Guardar</button>
+            </div>
+            <div class="item">
+                <img src="bistek.jpg" alt="Comida 2"> 
+                BISTEK
+                <button onclick="addToCart('Comida 2')">Guardar</button>
+            </div>
+            <div class="item"> 
+                <img src="mixto.jpg"  alt="Comida 3"> 
+                MIXTO
+                <button onclick="addToCart('Comida 3')">Guardar</button>
+            </div>
+        </div>
+        <p>Precios: $80.00 - $100.00</p>
+    </section>
+
+    <!-- Sección Tacos -->
+    <section id="tacos" class="tab-content">
+        <h2>Complementos</h2>
+        <div class="image-container">
+            <div class="item">
+                <img src="complemento.jpg" alt="Taco al pastor"> 
+                GUARNICION
+                <button onclick="addToCart('Taco al pastor')">Guardar</button>
+            </div>
+            <div class="item">
+                <img src="c verdura.jpg" alt="Taco de bistec"> 
+                REPOLLO Y ZANAHORIA
+                <button onclick="addToCart('Taco de bistec')">Guardar</button>
+            </div>
+            <div class="item">
+                <img src="lechuga.jpg" alt="Taco de carnitas"> 
+                LECHUGA
+                <button onclick="addToCart('Taco de carnitas')">Guardar</button>
+            </div>
+        </div>
+        <p>Precios: $15.00 - $18.00</p>
+    </section>
+
+    <!-- Sección Chilaquiles -->
+    <section id="chilaquiles" class="tab-content">
+        <h2>Chilaquiles</h2>
+        <div class="image-container">
+            <div class="item">
+                <img src="chilaquiles.jpg" alt="Chilaquiles verdes">
+                <button onclick="addToCart('Chilaquiles verdes')">Guardar</button>
+            </div>
+            <div class="item">
+                <img src="chilaquiles.jpg" alt="Chilaquiles rojos">
+                <button onclick="addToCart('Chilaquiles rojos')">Guardar</button>
+            </div>
+            <div class="item">
+                <img src="chilaquiles.jpg" alt="Chilaquiles con pollo">
+                <button onclick="addToCart('Chilaquiles con pollo')">Guardar</button>
+            </div>
+        </div>
+        <p>Precios: $50.00 - $55.00</p>
+    </section>
+
+    <!-- Sección Conócenos -->
+    <section id="conocenos" class="tab-content">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3698.728397371924!2d-99.03798132520403!3d22.021711252936594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d60d45cc4cf729%3A0xca99477921b9215b!2sInstituto%20Tecnol%C3%B3gico%20de%20Ciudad%20Valles!5e0!3m2!1ses!2smx!4v1729234684828!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <h2>Conócenos</h2>
+        <p>Somos una taquería con tradición, sirviendo los mejores tacos de la ciudad.</p>
+        <img src="lugar.jpg" alt="Nuestra taquería" class="image-about">
+    </section>
+
+    <!-- Sección Clientes -->
+    <section id="clientes" class="tab-content">
+        <h2>Clientes</h2>
+        <p>Conoce a nuestros clientes felices disfrutando de nuestros tacos.</p>
+        <video controls width="600">
+            <source src="video_clientes.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- Sección Carrito -->
+    <section id="carrito" class="tab-content">
+        <h2>Carrito</h2>
+        <ul id="cartItems"></ul>
+    </section>
+
+    <!-- Sección Perfil -->
+    <section id="perfil" class="tab-content">
+        <h2>Perfil</h2>
+        <form>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <input type="submit" value="Crear Perfil">
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 La Llamarada. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function addToCart(item) {
+            const cartItems = document.getElementById('cartItems');
+            const li = document.createElement('li');
+            li.textContent = item;
+            cartItems.appendChild(li);
+        }
+    </script>
+</body>
+</html>
